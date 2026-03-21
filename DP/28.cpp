@@ -1,0 +1,5 @@
+/*
+The thing is that we need to foind the longst palindromic sequence and in that what we will do is that
+we will juts reverse the string and then just find the longest sequence in that and that will be the answer
+
+*/
