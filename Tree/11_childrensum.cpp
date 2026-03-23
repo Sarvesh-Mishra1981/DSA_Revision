@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+#include<queue>
+class Node {
+public:
+    int val;
+    Node *left, *right;
+    Node(int x) {
+        val = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+bool solve(Node* root){
+  if(root==NULL) return true;
+  if(root->left==NULL && root->right==NULL) return true;
+  int sum=0;
+  if(root->left!=NULL){ sum+=root->left->val; }
+  if(root->right!=NULL){ sum+=root->right->val; }
+  return(sum==root->val && solve(root->left)&& solve(root->right));
+}
+
+int main() {
+    Node* head = new Node(1);
+    head->left = new Node(2);
+    head->right = new Node(3);
+    head->left->left = new Node(4);
+    head->left->right = new Node(5);
+    head->right->left = new Node(6);
+    head->right->right = new Node(7);
+    head->left->left->left = new Node(8);
+    head->left->left->right = new Node(9);
+    head->left->right->left = new Node(10);
+    head->left->right->right = new Node(11);
+    head->right->left->left = new Node(12);
+    head->right->left->right = new Node(13);
+    head->right->right->left = new Node(14);
+    head->right->right->right = new Node(15);
+    if(solve(head)) cout<<"Yes"<<endl;
+    else cout<<"No"<<endl;
+    return 0;
+}
