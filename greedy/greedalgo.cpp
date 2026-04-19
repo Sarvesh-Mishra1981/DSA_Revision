@@ -1,0 +1,4 @@
+/*
+so the basic idea is that we will make the array sorted in the dec order and hence from there 
+we will able to take the max of the thing and get the max ans
+*/
